@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+import playground.views
+
 urlpatterns = [
+    path('playground/hello/', playground.views.say_hello),  # say_hello 뒤에 *괄호가 있으면 안된다*
     path('admin/', admin.site.urls),
 ]
