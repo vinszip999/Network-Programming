@@ -13,12 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
 
-import playground.views
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('playground/hello/', playground.views.say_hello),  # say_hello 뒤에 *괄호가 있으면 안된다*
+    path('playground/', include('playground.urls')),
     path('admin/', admin.site.urls),
 ]
